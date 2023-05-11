@@ -1,0 +1,35 @@
+<form (ngSubmit)="onsubmit()" [formGroup]="momentform"  #formDir ="ngForm" class="w-full h-full flex flex-col">
+  <div class="mt-6 flex flex-row gap-[570px] ml-46">
+    <h1 class="flex ml-6 font-poppins  font-extrabold text-yellow-400 text-3xl">
+      CADASTRO ALUNO
+    </h1>
+    <h1 class="flex font-poppins text-black text-2xl   ">Olá, {{token}}</h1>
+  </div>
+      <div class="flex  mt-28 ml-56  flex-row gap-6">
+        <label for="Nome" class="font-poppins text-lg">Nome:</label>
+        <input type="text" name="Nome"  class="border-2 border-zinc-500 w-96 h-9 rounded-xl p-4 text-zinc-800 text-xl " formControlName="nome" placeholder="Ex: Livia Alves">
+      </div>
+      <div class=" flex mt-6 ml-56 flex-row gap-3">
+        <label for="RA" class="font-poppins text-lg
+        ">R.Aluno:</label>
+        <input type="text" name="RA"  class="border-2 border-zinc-500 w-96 h-9 rounded-xl p-4 text-zinc-800 text-xl " formControlName="RA"
+         placeholder="RA: 40028992">
+    </div>
+      <div class="flex mt-6 ml-56 flex-row gap-8 ">
+            <label for="serie" class="font-poppins text-lg">Série:</label>
+            <select name="serie" id="serie" class="w-32 h-8 border-2 border-zinc-500 rounded-xl text-center" formControlName="serie">
+                <option value="1" formControlName="serie">1°</option>
+                <option value="2" formControlName="serie">2°</option>
+                <option value="3" formControlName="serie">3°</option>
+                <option value="4" formControlName="serie">4°</option>
+                <option value="5" formControlName="serie">5°</option>
+                <option value="6" formControlName="serie">6°</option>
+                <option value="7" formControlName="serie">7°</option>
+                <option value="8" formControlName="serie">8°</option>
+                <option value="9" formControlName="serie">9°</option>
+            </select>
+      </div>  
+      <div class="flex mt-6 ml-56">
+        <button type="submit" class="border-2 border-zinc-500 w-80 bg-yellow-300 h-14 mt-48 ml-32 rounded-xl">Salvar</button>
+      </div>
+</form>

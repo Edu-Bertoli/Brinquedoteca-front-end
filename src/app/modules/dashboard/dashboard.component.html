@@ -1,6 +1,88 @@
-<section class="">
-    <a routerLink="/dashboard" style="display: block">Início</a>
-    <a routerLink="/dashboard/estoque" style="display: block">Estoque</a>
-</section>
+<div class="w-screen h-screen flex flex-">
+  <div class="flex">
+    <aside
+      class="w-96 p-6 h-screen border border-r-2 border-x-4 border-l-transparent border-y-transparent text-sm"
+    >
+      <img src="./assets/logo.png" class="w-72" alt="" />
+      <nav class="space-y-4 mt-6 ml-4">
+        <a
+          [routerLink]= "['/dashboard/home']"
+          routerLinkActive="active"
+          [ngClass]="
+            routePath == '/dashboard/home' ? 'text-yellow-400' : 'text-zinc-600'
+          "
+          class="flex items-center gap-3 text-xl font-medium"
+        >
+          Home
+        </a>
+        <a
+          [routerLink]="['/dashboard/cadastroBrinquedo']" [ngClass]="routePath == '/dashboard/cadastroBrinquedo' ? 'text-yellow-400' : 'text-zinc-600' "
+          class="flex items-center gap-3 font-medium text-xl"
+          >Cadastro Brinquedo</a
+        >
+        <a
+          href=""
+          class="flex items-center gap-3 font-medium text-xl"
+          [routerLink] = "['/dashboard/emprestimo']"
+          routerLinkActive="active"
+          [ngClass]="routePath == '/dashboard/emprestimo' ? 'text-yellow-400' : 'text-zinc-600'"
+          >Emprestimo</a
+        >
+        <a
+          [routerLink]= "['/dashboard/reserva']"
+          routerLinkActive="active"
+          [ngClass]="routePath == '/dashboard/reserva' ? 'text-yellow-400' : 'text-zinc-600'"
+          class="flex items-center gap-3 font-medium text-xl "
+          >Reserva</a
+        >
+        <a
+          [routerLink]="['/dashboard/estoque']"
+          routerLinkActive="active"
+          [ngClass]="
+            routePath == '/dashboard/estoque'
+              ? 'text-yellow-400'
+              : 'text-zinc-600'
+          "
+          class="flex items-center gap-3 text-xl font-medium "
+        >
+          Estoque
+        </a>
+        <a
+          href=""
+          class="flex items-center gap-3 font-medium text-xl"
+          [routerLink]= "['/dashboard/cadastroAluno']"
+          [ngClass]=" routePath == '/dashboard/cadastroAluno' ? 'text-yellow-400' : 'text-zinc-600' "
+          >Cadastrar Aluno</a
+        >
+        <a
+          href=""
+          class="flex items-center gap-3 font-medium text-xl"
+          [routerLink]="['/dashboard/manutencao']"
+          routerLinkActive="active"
+          [ngClass]=" routePath == '/dashboard/manutencao' ? 'text-yellow-400' : 'text-zinc-600' "
+          >Manutenção</a
+        >
+      </nav>
+      <nav class="space-y-4 mt-40 ml-4">
+        <a
+          [routerLink] ="['/dashboard/controleUsuario']"
+          [ngClass]="routePath == '/dashboard/controleUsuario' ? 'text-yellow-400' :  'text-zinc-600' && routePath == '/dashboard/cadastroUsuario' ? 'text-yellow-400 ' : 'text-zinc-600' "
+          class="flex items-center gap-3 font-medium text-xl"
+          >Controle Usuario
+          </a
+        >
+        <a
+          href=""
+          (click)="onclick()"
+          class="flex items-center gap-3 font-medium text-xl text-zinc-600"
+          >Sair</a
+        >
+      </nav>
+    </aside>
+  </div>
+  <div class="flex-1">
+    <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
+  </div>
+  
+</div>
