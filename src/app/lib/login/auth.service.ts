@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import jwtDecode from 'jwt-decode';
 import { User } from './user-login';
+import { Observable } from 'rxjs';
 @Injectable({
 
   providedIn:'root'
@@ -49,6 +50,9 @@ getDecodedAccessToken2(token: string): any {
   } catch(Error) {
     return null;
   }
+} 
+getAllEstoque(): Observable<any>{
+      return this.http.get('http://localhost:3000/estoque') 
 }
 
 }

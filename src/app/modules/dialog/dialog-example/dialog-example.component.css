@@ -1,0 +1,7 @@
+.box {
+  height: 18rem;
+  width: 46.5rem;
+  border: 2px solid gray;
+  overflow: scroll;
+  
+}

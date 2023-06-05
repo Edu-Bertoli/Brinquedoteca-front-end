@@ -29,11 +29,17 @@ export class DashboardComponent implements OnDestroy{
     });
     
   }
+  
   ngOnDestroy(): void {
     this.router.ngOnDestroy()
   }
   onclick(){
     this.authService.doLogout()
   }
-
+  navigateTo(value: any) {
+    if (value) {
+      this.router.navigate([value]);
+      console.log(value)
+  }
+}
 }

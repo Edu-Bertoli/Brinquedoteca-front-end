@@ -1,0 +1,33 @@
+<main class="w-[40rem] h-[30rem] bg-zinc-100">
+    <div
+      class="flex justify-center items-center p-4 text-3xl text-yellow-400 font-poppins font-bold border-b-2 border-zinc-600"
+    >
+        RESERVAR O BRINQUEDO
+    </div>
+   
+    <div class="flex justify-center items-center">
+        <section class="mt-5 w-[45rem] h-[22rem] flex-row">
+            <h1 class="text-center text-yellow-400 font-poppins text-3xl font-bold ">RESERVA  </h1>
+            <h1 class="mt-5 text-center font-poppins text-xl font-bold"> Id do Brinquedo: <span class="text-zinc-500">{{id}}</span></h1>
+            <form (ngSubmit)="onsubmit() "
+            [formGroup]="momentform"
+            #formDir="ngForm" class="mt-10">    
+           
+                <div class="flex flex-col mt-5 text-center"  >
+                 <div class="flex-row font-poppins text-xl  ">
+                    <label for="RA">RA:</label>
+                    <input type="number" formControlName="RA" class="w-96 rounded-xl ml-3 text-center">
+                 </div>   
+                 <input class="flex-row font-poppins text-xl" type="number" class="w-0" formControlName="id_estoque" >   
+                    
+                </div>
+                <div class="flex items-center justify-center">
+                <button  type="submit" class="mt-20 w-64 h-10 border-2 text-zinc-800 font-poppins border-zinc-500 bg-yellow-300 rounded-xl flex items-center justify-center ">Salvar</button>
+            </div>
+            </form>
+           
+        </section>
+        
+    </div>
+  </main>
+  

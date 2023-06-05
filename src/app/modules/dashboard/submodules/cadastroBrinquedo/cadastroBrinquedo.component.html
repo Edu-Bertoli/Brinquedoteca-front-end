@@ -1,8 +1,52 @@
-<section class="ml-6">
-  <div class="mt-4 flex flex-row gap-[520px] ml-46">
+<form class="ml-6"  (ngSubmit)="onsubmit()"
+[formGroup]="momentform"
+#formDir="ngForm">
+  <div class="mt-4 flex flex-row justify-between ml-46 mr-8">
     <h1 class="flex  font-poppins  font-extrabold text-yellow-400 text-3xl">
-      CADASTRO BRINQUEDO
+      <nav>
+      <select (change)="navigateTo($any($event.target).value)"  class="font-poppins">
+        <option >CADASTRO BRINQUEDO</option>
+        <option value="/dashboard/cadastroArea">CADASTRO DESENVOLVIMENTO</option>
+        <option value="/dashboard/cadastroClassificacao">CADASTRO CLASSIFICAÇÃO</option>
+        <option value="/dashboard/cadastroAluno">CADASTRO ALUNO</option>
+      </select>
+      </nav>
+      
     </h1>
     <h1 class="flex font-poppins text-black text-2xl   ">Olá, {{token}}</h1>
   </div>
-</section>
+    <div class="flex flex-col mt-10 ml-48" >
+      <label for="referencia" class="text-xl font-poppins">Referência:</label>
+       <input type="text" class="w-96 border-2 h-8 mt-1 border-zinc-600 rounded-xl p-4" formControlName="referencia" placeholder="Ex: hg-100">
+      <label for="Descricao" class=" text-xl mt-2 font-poppins" >Descrição: </label>
+      <input type="text" class="w-96 border-2 h-8 
+       border-zinc-600 rounded-xl mt-1  p-4" formControlName="descricao" placeholder="Bola de futebol">
+       <div class="flex flex-row mt-2  gap-24 text-xl font-poppins ">
+        <label for="Minina">Idade Mínima:</label>
+        <label for="Maxima">Idade Máxima:</label>
+        
+       </div>
+       <div class="flex flex-row mt-1 gap-24 text-xl font-poppins">
+        <input type="number" id="Minima" name="Minima" formControlName="idademin" class="w-36 border-2 rounded-xl border-zinc-600 text-center" min="1" >
+        <input type="number"id="Maxima" name="Maxima" formControlName="idademax" class="w-36 border-2 rounded-xl border-zinc-600  text-center" max="15" >
+       </div>
+       <label for="Entrada" class="text-xl font-poppins mt-2">Entrada:</label>
+       <select name="Entrada" id="Entrada" formControlName="formaDeEntrada" class="w-96 border-2 border-zinc-600  rounded-xl h-8 font-poppins">
+          <option value="Compra" class="text-center  font-poppins">Compra</option>
+          <option value="Doacao" class="text-center font-poppins">Doação</option>
+       </select>
+       <label for="Quantidade" class="text-xl font-poppins mt-2">Quantidade: </label>
+       <input type="number" id="Quantidade" name="Quantidade" formControlName="quantidade" class="w-96 border-2 rounded-xl border-zinc-600 h-8 font-poppins text-center" max="20" > 
+       <label for="Classificacao" class="text-xl  font-poppins mt-2">Classificação: </label>
+       <select name="Classificacao" id="Classificacao" formControlName="id_classificacao" class="w-96 border-2 border-zinc-600 rounded-xl h-8 font-poppins mt-1 text-center">
+        <option *ngFor="let c of CLASSIFICACAO;" [ngValue]="c.id_classificacao">{{c.Descricao}}</option>
+       </select>
+       <label for="Desenvolvimento" class="text-xl font-poppins mt-2" >Desenvolvimento: </label>
+       <select name="Desenvolvimento" id="Desenvolvimento" formControlName="id_area"  class="w-96 border-2 border-zinc-600 rounded-xl h-8 font-poppins mt-1 text-center 
+       ">
+      
+        <option  *ngFor="let d of DESENVOLVIMENTO; " [ngValue]="d.id_area" > {{d.descricao}} </option>
+       </select>
+       <button type="submit" class="flex mt-10  ml-14 border-2 border-zinc-600 w-72 h-12 rounded-xl bg-yellow-300 font-poppins  text-center justify-center p-3">Salvar</button>
+    </div>
+</form>

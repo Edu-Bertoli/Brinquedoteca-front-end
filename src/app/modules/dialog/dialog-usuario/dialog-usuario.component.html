@@ -1,0 +1,27 @@
+<main class="w-[55rem] h-[40rem] flex flex-col bg-zinc-100">
+  <div
+    class="flex justify-center items-center p-4 text-3xl text-yellow-400 font-poppins font-bold border-b-2 border-zinc-600"
+  >
+    Informações do Usuário
+  </div>
+  <div
+    class="flex-1 w-full mt-10 font-poppins pl-4 items-center text-xl flex flex-col justify-between gap-3"
+  >
+    <section class="flex flex-col gap-y-4">
+      <p>
+        Nome do Usuário:
+        <span class="text-zinc-600">{{ data.event.Nome }}</span>
+      </p>
+      <p>
+        Email do Usuário:
+        <span class="text-zinc-600">{{ data.event.email }}</span>
+      </p>
+      <p>
+        Cargo do Usuário:
+        <span class="text-zinc-600">{{ data.event.Funcao }}</span>
+      </p>
+    </section>
+
+    <button class="w-56   border-2 border-zinc-800 bg-red-600 " (click)="onclick()">Editar</button>
+  </div>
+</main>

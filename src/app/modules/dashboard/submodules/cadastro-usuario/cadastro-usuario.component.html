@@ -1,36 +1,79 @@
-<form (ngSubmit)="onsubmit()" [formGroup]="momentform" #formDir ="ngForm" class="w-full h-full flex flex-col">
-  <div class="mt-6 flex flex-row gap-[570px] ml-46">
-    <h1 class="flex  ml-6 font-poppins  font-extrabold text-yellow-400 text-3xl">
+<form
+  (ngSubmit)="onsubmit()"
+  [formGroup]="momentform"
+  #formDir="ngForm"
+  class="flex flex-col"
+>
+  <div class="mt-3 flex flex-row justify-between mr-8">
+    <h1 class="flex ml-6 font-poppins font-extrabold text-yellow-400 text-3xl">
       CADASTRO USUÁRIO
     </h1>
-    <h1 class="flex font-poppins text-black text-2xl   ">Olá,{{token}}</h1>
+    <h1 class="flex font-poppins text-black text-2xl">Olá,{{ token }}</h1>
   </div>
-      <div class="flex  mt-28 ml-56  flex-row gap-6">
-        <label for= "Nome" class="font-poppins text-lg">Nome:</label>
-        <input type="text" name="Nome"  class="border-2 border-zinc-500 w-96 h-9 rounded-xl p-4 text-zinc-800 text-xl "  formControlName="nome"  placeholder="Ex: Hagamenon Gonçalves">
-      </div>
-      <div class=" flex mt-6 ml-56 flex-row gap-3">
-        <label for="Email" class="font-poppins text-lg
-        ">Email:</label>
-        <input type="text" name="Email"  class="border-2 ml-4 border-zinc-500 w-96 h-9 rounded-xl p-4 text-zinc-800 text-xl " formControlName="email"  placeholder="Ex: einsteinlimeira@gmail.com">
-    </div>
-      <div class="flex mt-6 ml-56 flex-row gap-8 ">
-            <label for="cargos" class="font-poppins text-lg">Cargo:</label>
-            <select  name="cargos" formControlName="cargo" id="" class="w-52 h-8 border-2 border-zinc-500 rounded-xl text-center ">
-              <option  selected="selected"> Escolha um Cargo</option>
-                <option value="Professor" formGroupName="cargo">Professor</option>
-                <option value="Coordenador" formGroupName="cargo">Coordenador</option>
-                <option value="Diretor" formGroupName="cargo">Diretor</option>
+  <div class="flex mt-24   ml-56 flex-row gap-6">
+    <label for="nome" class="font-poppins text-lg">Nome:</label>
+    <input
+      type="text"
+      name="nome"
+      id="nome"
+      class="border-2 border-zinc-500 w-96 h-9 rounded-xl p-4 text-zinc-800 text-xl"
+      formControlName="nome"
+      placeholder="Ex: Hagamenon Gonçalves"
+    />
+   
+  </div>
+  
 
+  
+  <div class="flex mt-6 ml-56 flex-row gap-3">
+    <label for="Email" class="font-poppins text-lg">Email:</label>
+    <input
+      type="text"
+      name="email"
+      id="email"
+      class="border-2 ml-4 border-zinc-500 w-96 h-9 rounded-xl p-4 text-zinc-800 text-xl"
+      formControlName="email"
+      placeholder="Ex: einsteinlimeira@gmail.com"
+    />
+  </div>
 
-            </select>
-      </div>  
-      <div class="flex mt-6 ml-56 flex-row gap-4 ">
-        <label for="senha" class="font-poppins text-lg">Senha:</label>
-        <input type="password" name="senha" formControlName="senha"  class="border-2  border-zinc-500 w-96 h-9 rounded-xl p-4 text-zinc-800 text-xl " placeholder="*********">
-
-      </div>
-      <div class="flex mt-6 ml-56">
-        <button type="submit" class="border-2 border-zinc-500 w-80 bg-yellow-300 h-14 mt-40 ml-32 rounded-xl">Salvar</button>
-      </div>
+  <div class="flex mt-6 ml-56 flex-row gap-5">
+    <label for="cargos" class="font-poppins text-lg">Cargo:</label>
+    <select
+      name="cargos"
+      formControlName="cargo"
+      id="cargos"
+      class="w-52 h-8 border-2 border-zinc-500 rounded-xl text-center"
+    >
+      <option value="" selected disabled formGroupName="cargo">
+        Escolha o cargo
+      </option>
+      <option value="Professor" formGroupName="cargo">Professor</option>
+      <option value="Coordenador" formGroupName="cargo">Coordenador</option>
+      <option value="Diretor" formGroupName="cargo">Diretor</option>
+    </select>
+  
+  </div>
+ 
+  <div class="flex mt-6 ml-56 flex-row gap-4">
+    <label for="senha" class="font-poppins text-lg">Senha:</label>
+    <input
+      type="password"
+      name="senha"
+      formControlName="senha"
+      id="senha"
+      class="border-2 border-zinc-500 w-96 h-9 rounded-xl p-4 text-zinc-800 text-xl"
+      placeholder="*********"
+    />
+  </div>
+ 
+  
+  <div class="flex mt-6 ml-56">
+    <button
+      type="submit"
+      class="border-2 border-zinc-500 w-80 bg-yellow-300 h-14 mt-32 ml-32 rounded-xl"
+    >
+      Salvar
+    </button>
+  </div>
 </form>

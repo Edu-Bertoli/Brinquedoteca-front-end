@@ -8,7 +8,7 @@ import { EstoqueComponent } from './modules/dashboard/submodules/estoque/estoque
 import { AuthService } from './lib/login/auth.service';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './lib/login/auth-guard';
-import { HttpClientModule, HttpClient} from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { cadastroBrinquedoComponent } from './modules/dashboard/submodules/cadastroBrinquedo/cadastroBrinquedo.component';
 import { CadastroAlunoComponent } from './modules/dashboard/submodules/cadastro-aluno/cadastro-aluno.component';
@@ -19,15 +19,22 @@ import { ManutencaoaComponent } from './modules/dashboard/submodules/manutencaoa
 import { EmprestimoBrinquedoComponent } from './modules/dashboard/submodules/emprestimo-brinquedo/emprestimo-brinquedo.component';
 import { ReservaComponent } from './modules/dashboard/submodules/reserva/reserva.component';
 import { AuthLogin } from './lib/login/login-guard';
-
+import { DialogExampleComponent } from './modules/dialog/dialog-example/dialog-example.component';
+import { ControleAlunoComponent } from './modules/controle-aluno/controle-aluno.component';
+import { EmprestadosComponent } from './modules/emprestados/emprestados.component';
+import { CadastroAreaDesenvolvimentoComponent } from './modules/cadastro-area-desenvolvimento/cadastro-area-desenvolvimento.component';
+import { CadastroClassificacaoComponent } from './modules/cadastro-classificacao/cadastro-classificacao.component';
+import { ReservarComponent } from './reservar/reservar.component';
+import { ReservadosComponent } from './modules/reservados/reservados.component';
+import { PENDENCIASComponent } from './modules/pendencias/pendencias.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login',  pathMatch: 'full'},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard],
-    canActivateChild:[],
+    canActivateChild: [],
     children: [
       {
         // /dashboard/
@@ -40,46 +47,58 @@ const routes: Routes = [
         component: EstoqueComponent,
       },
       {
-        path:'cadastroBrinquedo',
-        component: cadastroBrinquedoComponent
+        path: 'cadastroBrinquedo',
+        component: cadastroBrinquedoComponent,
       },
       {
         path: 'cadastroAluno',
-        component: CadastroAlunoComponent
+        component: CadastroAlunoComponent,
       },
       {
         path: 'controleUsuario',
         component: ControleUsuarioComponent,
-        canActivate:[AuthLogin]
+        canActivate: [AuthLogin],
       },
       {
         path: 'cadastroUsuario',
         component: CadastroUsuarioComponent,
-        canActivate:[AuthLogin]
+        canActivate: [AuthLogin],
       },
       {
         path: 'manutencao',
-        component: ManutencaoaComponent
+        component: ManutencaoaComponent,
       },
       {
-        path:'emprestimo',
-        component: EmprestimoBrinquedoComponent
-      },{
+        path: 'emprestimo',
+        component: EmprestimoBrinquedoComponent,
+      },
+      {
         path: 'reserva',
-        component: ReservaComponent
-      }
-    
+        component: ReservaComponent,
+      },
+      {
+        path: 'controleAluno',
+        component: ControleAlunoComponent,
+      },
+      {
+        path: 'emprestimos',
+        component: EmprestadosComponent,
+      },
+      {path: 'cadastroArea', component: CadastroAreaDesenvolvimentoComponent},
+      {path: 'cadastroClassificacao', component: CadastroClassificacaoComponent},
+      {path: 'reservar', component: ReservarComponent},
+      {path: 'reservados', component: ReservadosComponent},
+      {path: 'pendencias', component: PENDENCIASComponent}
     ],
   },
   { path: 'login', component: LoginComponent },
-  
 ];
 export function tokenGetter() {
-  return localStorage.getItem("access_token");
+  return localStorage.getItem('access_token');
 }
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {enableTracing: false }),
+    RouterModule.forRoot(routes, { enableTracing: false }),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -87,11 +106,10 @@ export function tokenGetter() {
     }),
     RouterModule,
     HttpClientModule,
-    MatIconModule
-
+    MatIconModule,
   ],
   providers: [AuthService],
   exports: [RouterModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppRoutingModule {}

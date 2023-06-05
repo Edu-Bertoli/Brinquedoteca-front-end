@@ -1,0 +1,18 @@
+.icon {
+  padding-left: 25px;
+  background: url("./icon.svg") no-repeat left;
+  background-size: 20px;
+}
+.icon-filter{
+padding-left: 25px;
+  background: url("./filter.svg") no-repeat left;
+  background-size: 20px;
+  
+}
+
+.icon-right{
+  padding-left: 25px;
+    background: url("./right.svg") no-repeat left;
+    background-size: 30px;
+    
+  }

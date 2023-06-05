@@ -1,0 +1,76 @@
+<section class="ml-6">
+    <div class="mt-4 flex flex-row justify-between ml-46 mr-8">
+      <h1
+        class="flex font-poppins font-extrabold text-yellow-400 text-3xl"
+      >
+      <nav>
+        <select (change)="navigateTo($any($event.target).value)"  class="font-poppins">
+          <option >CONTROLE ALUNO</option>
+          <option value="/dashboard/controleUsuario">CONTROLE USUÁRIO</option>
+  
+        </select>
+        </nav>
+
+      </h1>
+      <h1 class="flex font-poppins text-black text-2xl">Olá, {{ token }}</h1>
+    </div>
+    <div
+      class="w-[1100px] mt-8 h-[600px] border flex flex-col border-zinc-500 rounded-lg border-t-2 border-l-2 border-r-2 border-b-2"
+    >
+      <div class="flex flex-col flex-1">
+        <div>
+            <a [routerLink] ="['/dashboard/controleUsuario']" class="icon-left"></a>
+          <input
+            type="search"
+            placeholder="Digite o código, referência ou  descrição "
+            class="mx-4 mt-1 icon border ml-10  border-t-2 w-96 border-l-2 border-r-2 border-b-2 border-zinc-500 rounded-lg placeholder-gray-500 placeholder text-center"
+            [(ngModel)]="searchText"
+          />
+     
+
+        </div>
+  
+        <div class="flex-1 p-5">
+          <table class="w-full text-center">
+            <thead
+              class="font-poppins text-xl border border-b-2 border-l-0 border-r-0 border-t-0 border-zinc-300"
+            >
+              <th>Nome</th>
+              <th>Série</th>
+              <th>RA</th>
+            </thead>
+            <tbody class="text-lg font-semibold font-poppins">
+              <tr *ngFor="let post of POSTS | filter : searchText">
+                <td class="">
+                    {{post.Nome}}
+                </td>
+                <td class="">{{post.Serie}}</td>
+                <td class="">{{post.RA}}</td>
+                <td class=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="flex flex-row text-center items-center justify-center gap-4">
+        <input
+          type="button"
+          value="Anterior"
+          class="border-2 cursor-pointer border-zinc-600 w-32 rounded-xl"
+          (click)="onAnterior()"
+        />
+        <input
+          type="number"
+          value="{{ this.currentPage }}"
+          class="border-2 border-zinc-600 w-32 rounded-xl text-center"
+        />
+        <input
+          type="button"
+          value="Próximo"
+          class="border-2 cursor-pointer border-zinc-600 w-32 rounded-xl"
+          (click)="onProximo()"
+        />
+      </div>
+    </div>
+  </section>
+  

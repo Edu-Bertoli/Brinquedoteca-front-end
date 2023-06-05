@@ -1,7 +1,15 @@
 <section class="ml-6">
-  <div class="mt-6 flex flex-row gap-[730px] ml-46">
-    <h1 class="flex font-poppins font-extrabold text-yellow-400 text-3xl">
-      ESTOQUE
+  <div class="mt-4 flex flex-row justify-between mr-8 ml-46">
+    <h1
+      class="flex font-poppins font-extrabold text-yellow-400 text-3xl"
+    >
+    <nav>
+      <select (change)="navigateTo($any($event.target).value)"  class="font-poppins">
+        <option >ESTOQUE</option>
+        <option value="/dashboard/pendencias">PENDÊNCIAS</option>
+
+      </select>
+      </nav>
     </h1>
     <h1 class="flex font-poppins text-black text-2xl">Olá, {{ token }}</h1>
   </div>
@@ -11,40 +19,54 @@
     <div class="flex flex-col flex-1">
       <div>
         <input
-          type="text"
-          placeholder="Digite o codigo, referência ou  descrição"
-          class="mx-4 mt-1 border border-t-2 w-96 border-l-2 border-r-2 border-b-2 border-zinc-500 rounded-lg placeholder-gray-500 placeholder text-center"
-        />
-        <input
-          type="text"
-          placeholder="Tipo do Brinquedo"
-          class="border border-zinc-500 mx-4 mt-2 border-t-2 border-l-2 w-48 border-r-2 border-b-2 rounded-lg text-center ml-44"
+          type="search"
+          placeholder="Digite o código, referência ou  descrição "
+          class="mx-4 mt-1 icon border border-t-2 w-96 border-l-2 border-r-2 border-b-2 border-zinc-500 rounded-lg placeholder-gray-500 placeholder text-center"
+          [(ngModel)]="searchText"
+          
         />
       </div>
 
-      <div class="flex-1 w-full mt-5">
+      <div class="flex-1 p-5">
         <table class="w-full text-center">
           <thead
-            class="font-poppins text-xl border border-b-2 border-l-0 border-r-0 border-t-0 border-zinc-300 "
+            class="font-poppins text-xl border border-b-2 border-l-0 border-r-0 border-t-0 border-zinc-300"
           >
             <th>Cód</th>
             <th>Referência</th>
-            <th>Descricao</th>
+            <th>Descrição</th>
             <th>Quantidade</th>
           </thead>
-          <tbody class="text-lg font-semibold font-poppins ">
-            <tr *ngFor="let post of POSTS" class="">
+          <tbody class="text-lg font-semibold font-poppins">
+            <tr *ngFor="let post of POSTS | filter : searchText let i = index; " >
               <td class="">
-                {{ post.id }}
+                <button (click)="onclick(post.id - 1)"  >{{ post.id }}</button>
               </td>
               <td class="">{{ post.referencia }}</td>
               <td class="">{{ post.descricao }}</td>
               <td class="">{{ post.quantidade }}</td>
-            </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <div class="flex flex-row text-center items-center justify-center">a</div>
+    <div class="flex flex-row text-center items-center justify-center gap-4">
+      <input
+        type="button"
+        value="Anterior"
+        class="border-2 cursor-pointer border-zinc-600 w-32 rounded-xl"
+        (click)="onAnterior()"
+      />
+      <input
+        type="number"
+        value="{{ this.currentPage }}"
+        class="border-2 border-zinc-600 w-14  rounded-xl text-center"
+      />
+      <input
+        type="button"
+        value="Próximo"
+        class="border-2 cursor-pointer border-zinc-600 w-32 rounded-xl"
+        (click)="onProximo()"
+      />
+    </div>
   </div>
 </section>

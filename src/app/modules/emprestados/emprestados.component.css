@@ -1,0 +1,11 @@
+.icon-left{
+    padding-left: 25px;
+  background: url("./left.svg") no-repeat left;
+  background-size: 30px;
+}
+
+.icon{
+    padding-left: 15px;
+  background: url("./icon.svg") no-repeat left;
+  background-size: 20px;
+}

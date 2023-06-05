@@ -1,0 +1,39 @@
+<main class="w-[40rem] h-[30rem] bg-zinc-100">
+    <div
+    class="flex justify-center items-center p-4 text-3xl text-yellow-400 font-poppins font-bold border-b-2 border-zinc-600"
+  >
+    Retorno da Manutenção
+  </div>
+  <div class="mt-4 flex font-poppins text-xl justify-center items-center">
+    Como voltou da manutenção?
+  </div>
+  <div class="flex justify-center items-center mt-10">
+    <form
+      class=""
+      (ngSubmit)="onsubmit()"
+      [formGroup]="momentform"
+      #formDir="ngForm"
+    >
+      <select
+        name=""
+        id=""
+        class="w-96 border-2 border-zinc-600 rounded-xl h-8 font-poppins"
+        formControlName="status"
+      >
+        <option value="" selected disabled class="">Escolha um status</option>
+        <option value="Disponivel">Disponível</option>
+        <option value="Analise">Análise</option>
+        <option value="Descartado">Descartado</option>
+      </select>
+    
+
+      <div class="flex justify-center items-center">
+        <button
+          type="submit"
+          class="border-2 border-zinc-500 w-80 bg-yellow-300 h-14 mt-24 rounded-xl"
+        >
+          Salvar
+        </button>
+      </div>
+    </form>
+  </div>

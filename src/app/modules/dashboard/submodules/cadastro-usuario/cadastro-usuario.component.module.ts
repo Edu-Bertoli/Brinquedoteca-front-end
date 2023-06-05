@@ -7,9 +7,9 @@ import { FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/fo
 
 @NgModule({
     declarations:[
-        CadastroUsuarioComponent
     ],
-    imports: [CommonModule, FormsModule, ReactiveFormsModule],
+    
+    imports: [CommonModule, FormsModule, ReactiveFormsModule, ],
     providers:[
         { 
             provide: NG_VALUE_ACCESSOR,

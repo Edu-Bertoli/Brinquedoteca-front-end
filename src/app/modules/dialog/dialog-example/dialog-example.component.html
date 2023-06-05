@@ -1,0 +1,46 @@
+<main class="w-[55rem] h-[40rem] bg-zinc-100">
+        <div class="flex justify-center items-center p-4 text-3xl text-yellow-400 font-poppins font-bold border-b-2 border-zinc-600 ">
+            Informações do Brinquedo
+        </div>
+    <section class="mt-5 pl-8 text-xl font-poppins border-b-2 border-zinc-500 ">
+            <div class="flex flex-row gap-40">
+                <div class="">ID Brinquedo: <span class="text-zinc-500 pl-2">{{data.event.id}} </span></div>
+                <div>Área de Desenvolvimento: <span class="text-zinc-500 pl-2">{{data.event.cadastro_area.descricao}}</span></div>
+            </div>
+            <div class="flex flex-row mt-5 gap-40">
+                <div>Descrição: <span class="text-zinc-500 pl-2">{{data.event.descricao}}</span></div>
+                <div>Classificação: <span class="text-zinc-500 pl-2"> {{data.event.cadastro_classificacao.Descricao}}</span></div>
+            </div>
+            <div class="flex flex-row mt-5 gap-40">
+                <div>Idade Mínima: <span class="text-zinc-500 pl-2">{{data.event.idademin}} anos</span></div>
+                <div>Idade Máxima: <span class="text-zinc-500 pl-2"> {{data.event.idademax}} anos</span></div>
+            </div>
+            <div class="flex flex-row mt-5">
+                <div>
+                    Forma De Entrada: <span class="text-zinc-500 pl-2">{{data.event.formaDeEntrada}}</span>
+                </div>
+            </div>
+    </section>
+    <section class="mt-3 w-[45rem]  ml-20 h-[22rem] ">
+        <h1 class="text-center text-yellow-400 font-poppins text-3xl font-bold ">ESTOQUE</h1>
+       <div  *ngFor="let post of POSTS "  class="pt-6">
+        <cdk-virtual-scroll-viewport itemSize="50"  class="box">
+        <table  class="w-full text-center font-poppins text-xl">
+            <thead >
+                <td>Id Estoque</td>
+                <td>Referência</td>
+                <td>Status</td>
+            </thead>
+            <tr *cdkVirtualFor="let teste of post.event.brinquedo_estoque" class="text-zinc-500">
+            <td>{{teste.id_estoque}}</td>
+            <td>{{teste.Referencia}}</td>
+            <td>{{teste.Estoque_Status.status}}</td>
+        </tr>
+
+        </table>
+    </cdk-virtual-scroll-viewport>
+       </div>
+       
+    </section>
+
+</main>

@@ -1,0 +1,6 @@
+
+.icon-left{
+    padding-left: 25px;
+  background: url("./left.svg") no-repeat left;
+  background-size: 30px;
+}
