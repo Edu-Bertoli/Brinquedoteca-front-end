@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/lib/login/auth.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: 'app-ajuda-component',
+  templateUrl: './ajuda-component.component.html',
+  styleUrls: ['./ajuda-component.component.css']
 })
-export class HomeComponent implements OnInit{
+export class AjudaComponentComponent {
+ 
   constructor(private authService: AuthService, private router: Router){
   }
 

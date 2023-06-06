@@ -27,6 +27,8 @@ import { CadastroClassificacaoComponent } from './modules/cadastro-classificacao
 import { ReservarComponent } from './reservar/reservar.component';
 import { ReservadosComponent } from './modules/reservados/reservados.component';
 import { PENDENCIASComponent } from './modules/pendencias/pendencias.component';
+import { AjudaComponentComponent } from './modules/ajuda-component/ajuda-component.component';
+import { NotFoundComponentComponent } from './modules/not-found-component/not-found-component.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -88,10 +90,12 @@ const routes: Routes = [
       {path: 'cadastroClassificacao', component: CadastroClassificacaoComponent},
       {path: 'reservar', component: ReservarComponent},
       {path: 'reservados', component: ReservadosComponent},
-      {path: 'pendencias', component: PENDENCIASComponent}
+      {path: 'pendencias', component: PENDENCIASComponent},
+      {path: 'ajuda', component: AjudaComponentComponent}
     ],
   },
   { path: 'login', component: LoginComponent },
+  {path: '**', component: NotFoundComponentComponent}
 ];
 export function tokenGetter() {
   return localStorage.getItem('access_token');

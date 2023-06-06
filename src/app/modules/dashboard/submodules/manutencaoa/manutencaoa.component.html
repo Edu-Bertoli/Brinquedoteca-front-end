@@ -38,7 +38,7 @@
                 let post of POSTS | filter: searchText; let i = index
               "
             >
-                <td class=""><button (click)="onclick(post.id - 1)">
+                <td class=""><button (click)="onclick(i)">
                   {{post.id}}
                 </button></td>
               <td class="">{{post.Descricao}}</td>

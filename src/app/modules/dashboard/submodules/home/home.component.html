@@ -1,10 +1,18 @@
 <section class=" h-full w-full bg-[url('assets/teste.png')] bg-cover bg-no-repeat bg-center  ">
    
   <div class="flex justify-between items-center  px-10" >
-    <h1 class="flex mt-4 ml-6 font-poppins  font-extrabold text-yellow-400 text-3xl">
-      HOME
+    <h1
+      class="flex font-poppins font-extrabold text-yellow-400 text-3xl"
+    >
+    <nav>
+      <select (change)="navigateTo($any($event.target).value)"  class="font-poppins">
+        <option >HOME</option>
+        <option value="/dashboard/ajuda">AJUDA</option>
+
+      </select>
+      </nav>
     </h1>
-    <h1 class="flex font-poppins ml-6 text-black text-2xl  mt-4  ">Olá, {{token}} </h1>
+    <h1 class="flex font-poppins text-black text-2xl">Olá, {{ token }}</h1>
   </div>
      
    

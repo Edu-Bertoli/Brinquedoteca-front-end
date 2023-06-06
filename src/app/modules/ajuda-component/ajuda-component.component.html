@@ -1,0 +1,16 @@
+<div class="flex justify-between items-center  px-10" >
+    <h1
+      class="flex font-poppins font-extrabold text-yellow-400 text-3xl"
+    >
+    <nav>
+      <select (change)="navigateTo($any($event.target).value)"  class="font-poppins">
+        <option >AJUDA</option>
+        <option value="/dashboard/home">HOME</option>
+
+      </select>
+      </nav>
+    </h1>
+    <h1 class="flex font-poppins text-black text-2xl">Olá, {{ token }}</h1>
+  </div>
+
+<p class="flex items-center justify-center mt-56">PARA MAIS INFORMAÇÕES E AJUDA SOBRE O SISTEMA ACESSE O CANAL NO YOUTUBE:  <span class="font-extrabold flex pl-3" > <a href="https://www.youtube.com/@BrinquedotecaEinstein" target="_blank" class="blank">BrinquedotecaEinstein</a> </span></p>

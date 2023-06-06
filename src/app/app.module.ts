@@ -52,6 +52,8 @@ import { DialogReservadosParte2Component } from './modules/dialog/dialog-reserva
 import { PENDENCIASComponent } from './modules/pendencias/pendencias.component';
 import { DialogPendenciasComponent } from './modules/dialog/dialog-pendencias/dialog-pendencias.component';
 import { DialogPendenciasParte2Component } from './modules/dialog/dialog-pendencias-parte2/dialog-pendencias-parte2.component';
+import { AjudaComponentComponent } from './modules/ajuda-component/ajuda-component.component';
+import { NotFoundComponentComponent } from './modules/not-found-component/not-found-component.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +83,7 @@ import { DialogPendenciasParte2Component } from './modules/dialog/dialog-pendenc
     DialogManutencaoComponent,
     DialogmanutencaoParte22Component,
     DiallogReservaParte2Component,  
-    ReservadosComponent, DialogReservadosComponent, DialogReservadosParte2Component, PENDENCIASComponent, DialogPendenciasComponent, DialogPendenciasParte2Component
+    ReservadosComponent, DialogReservadosComponent, DialogReservadosParte2Component, PENDENCIASComponent, DialogPendenciasComponent, DialogPendenciasParte2Component, AjudaComponentComponent, NotFoundComponentComponent
   ],
   imports: [
     MatFormFieldModule,
